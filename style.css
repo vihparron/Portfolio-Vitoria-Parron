@@ -1,0 +1,299 @@
+:root {
+    --bg-color: #F4F2EE;
+    --card-bg: #FFFFFF;
+    --primary-color: #A44E29; 
+    --secondary-color: #DEC1AC; 
+    --text-color: #2D2D2D;
+    --font-main: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    padding-bottom: 0;
+}
+
+.container-large { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+img { width: 100%; height: auto; display: block; }
+
+/* =========================================
+   CAPA
+   ========================================= */
+.hero-native {
+    display: flex; justify-content: space-between; align-items: center; min-height: 80vh;
+    padding: 2rem 10%; background-color: var(--bg-color); position: relative; overflow: hidden; max-width: 1400px; margin: 0 auto;
+}
+.hero-content { z-index: 10; }
+.hero-subtitle { font-size: 1.2rem; color: var(--text-color); margin-bottom: 0.5rem; letter-spacing: 1px; }
+.hero-title { font-size: clamp(4rem, 8vw, 8rem); font-weight: 700; line-height: 0.9; text-transform: uppercase; color: #000; margin-bottom: 1rem; }
+
+/* NOVO ESTILO DO TÍTULO DA PROFISSÃO (Editorial e Chique) */
+.hero-role { 
+    font-size: 1.4rem; 
+    color: var(--primary-color); 
+    font-weight: 400; 
+    letter-spacing: 3px;
+}
+
+.hero-graphics { position: relative; width: 400px; height: 500px; display: flex; justify-content: center; align-items: center; }
+.svg-hero { width: 100%; height: 100%; overflow: visible; }
+
+/* =========================================
+   SOBRE MIM
+   ========================================= */
+.sobre-mim-native {
+    display: flex; align-items: center; gap: 6rem; margin: 5rem auto;
+}
+.sobre-graphics-original { position: relative; width: 350px; height: 350px; flex-shrink: 0; }
+.sg-circle-outline {
+    position: absolute; top: 0; left: 10px; width: 220px; height: 220px;
+    border: 6px solid var(--primary-color); border-radius: 50%; z-index: 1;
+}
+.sg-circle-solid {
+    position: absolute; top: 40px; left: 50px; width: 260px; height: 260px;
+    background-color: var(--secondary-color); border-radius: 50%; z-index: 2;
+}
+.sobre-photo-circle {
+    position: absolute; top: 60px; left: 30px; width: 250px; height: 250px;
+    border-radius: 50%; object-fit: cover; object-position: top center; z-index: 3;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.sobre-text { flex: 1; }
+.sobre-title { font-size: 3rem; color: #000; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 2px; }
+.sobre-title span { font-style: italic; font-weight: 300; color: var(--primary-color); text-transform: lowercase; }
+.sobre-line { width: 80px; height: 2px; background-color: var(--primary-color); margin-bottom: 2rem; }
+.sobre-text p { font-size: 1.1rem; color: #555; margin-bottom: 1.2rem; line-height: 1.8; }
+.sobre-highlight-box { margin-top: 2.5rem; padding-left: 1.5rem; border-left: 4px solid var(--secondary-color); }
+.sobre-highlight { font-weight: 500; color: var(--primary-color) !important; font-size: 1.3rem !important; font-style: italic; line-height: 1.5 !important; }
+
+.sobre-contact-elegant {
+    display: flex; align-items: center; gap: 2.5rem; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid rgba(164, 78, 41, 0.2);
+}
+
+.location-pill {
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.contact-pill {
+    text-decoration: none; color: var(--primary-color); font-size: 1.1rem; font-weight: 500; transition: color 0.3s ease; position: relative; padding-bottom: 5px;
+}
+.contact-pill::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 2px; background-color: var(--primary-color); transition: width 0.3s ease;
+}
+.contact-pill:hover { color: #000; }
+.contact-pill:hover::after { width: 100%; background-color: #000; }
+
+/* =========================================
+   SKILLS & SOFTWARES 
+   ========================================= */
+.skills-softwares-section {
+    display: flex; gap: 4rem; margin: 6rem auto 5rem auto; align-items: stretch;
+}
+.skills-box {
+    flex: 1; border-right: 1px solid rgba(164, 78, 41, 0.2); padding-right: 4rem;
+}
+.softwares-box { flex: 2; padding-left: 2rem; }
+.skills-box h2, .softwares-box h2 {
+    font-size: 2.2rem; color: var(--primary-color); margin-bottom: 2.5rem; font-weight: 600;
+}
+.skills-list { list-style: none; padding-left: 0; }
+.skills-list li {
+    font-size: 1.15rem; color: #555; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 15px; font-weight: 400;
+}
+.skill-dot {
+    width: 6px; height: 6px; background-color: var(--secondary-color); border-radius: 50%; flex-shrink: 0;
+}
+.software-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 3.5rem 1rem;
+}
+.soft-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.soft-icon-img {
+    width: 70px; height: 70px; object-fit: contain; margin-bottom: 1.2rem;
+    transition: transform 0.3s ease; mix-blend-mode: multiply; 
+}
+.soft-icon-img:hover { transform: translateY(-5px); }
+.soft-name { font-weight: 600; font-size: 1.1rem; color: var(--text-color); margin-bottom: 0.3rem; }
+.soft-level { font-size: 0.9rem; color: #999; font-weight: 300; }
+
+/* =========================================
+   SUMÁRIO 
+   ========================================= */
+.summary-editorial { margin: 5rem auto; display: flex; justify-content: space-between; align-items: stretch; }
+.summary-content { flex: 1; padding-right: 5rem; }
+.editorial-title { font-size: 2.5rem; font-weight: 600; color: var(--primary-color); margin-bottom: 3rem; }
+
+.summary-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    column-gap: 6rem; 
+}
+
+.summary-col { display: flex; flex-direction: column; gap: 2.5rem; }
+.summary-item { display: flex; flex-direction: column; text-decoration: none; transition: transform 0.3s ease; }
+.sum-num { font-size: 1.8rem; font-weight: 300; color: #666; margin-bottom: 0.2rem; }
+.sum-name { font-size: 1.15rem; color: #888; }
+.summary-item:hover { transform: translateX(10px); }
+.summary-item:hover .sum-name { color: var(--primary-color); }
+
+.summary-graphics { position: relative; width: 80px; display: flex; align-items: center; justify-content: center; }
+.svg-triangles { width: 100%; height: 300px; }
+
+/* =========================================
+   PROJETOS CARDS
+   ========================================= */
+.project-card { display: flex; align-items: flex-start; gap: 4rem; margin-bottom: 8rem; }
+.project-card.reverse { flex-direction: row-reverse; }
+.project-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.project-number { font-size: 4rem; font-weight: 300; color: var(--secondary-color); font-family: Georgia, serif; font-style: italic; line-height: 1; opacity: 0.6; }
+.project-info h2 { font-size: 2.2rem; color: var(--text-color); font-weight: 400; text-transform: uppercase; letter-spacing: 2px; margin-top: -10px; margin-bottom: 1.5rem; }
+.project-line { width: 80px; height: 1px; background: var(--primary-color); margin-bottom: 1.5rem; }
+
+.project-desc {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 95%;
+}
+
+.project-img-wrapper { flex: 2; position: relative; cursor: pointer; overflow: hidden; border-radius: 8px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); transition: transform 0.4s ease; }
+.project-img-wrapper:hover { transform: scale(1.02); }
+.overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(164, 78, 41, 0.2); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease; }
+.overlay span { color: #FFF; font-weight: 500; background: rgba(20, 20, 20, 0.85); padding: 12px 24px; border-radius: 4px; letter-spacing: 1px; text-transform: uppercase; font-size: 0.85rem; }
+.project-img-wrapper:hover .overlay { opacity: 1; }
+
+.project-gallery {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.project-gallery .project-img-wrapper {
+    flex: none;
+}
+
+/* =========================================
+   PROJETOS EXECUTIVOS
+   ========================================= */
+.executivos-grand-section { margin-top: 8rem; padding: 7rem 0 5rem 0; background-color: #EFECE6; border-top: 1px solid rgba(164, 78, 41, 0.15); }
+.grand-title-wrapper { text-align: center; margin-bottom: 7rem; padding: 0 2rem; }
+.grand-title-wrapper h2 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 300; text-transform: uppercase; letter-spacing: 6px; color: var(--primary-color); }
+.grand-title-wrapper p { font-size: 1.1rem; color: var(--text-color); font-style: italic; margin-top: 1rem; opacity: 0.8; }
+.grand-blueprint { display: flex; align-items: center; max-width: 1200px; margin: 0 auto 8rem auto; gap: 3rem; padding: 0 2rem; cursor: pointer; scroll-margin-top: 100px; }
+.grand-blueprint.reverse { flex-direction: row-reverse; }
+.grand-bp-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.grand-num { font-size: 6.5rem; font-weight: 300; color: rgba(222, 193, 172, 0.4); font-family: Georgia, serif; font-style: italic; line-height: 0.7; margin-bottom: 1rem; }
+.grand-bp-info h3 { font-size: 2.2rem; font-weight: 400; color: var(--text-color); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; }
+.grand-link { font-size: 0.95rem; color: var(--primary-color); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: transform 0.4s ease; display: flex; align-items: center; gap: 15px; }
+.grand-link::after { content: '⟶'; font-size: 1.5rem; }
+.grand-blueprint:hover .grand-link { transform: translateX(15px); }
+.grand-bp-img { flex: 2; background: #FFF; padding: 1.5rem; border-radius: 8px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05); transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.6s ease; position: relative; }
+.grand-bp-img::before { content: 'AMPLIAR PRANCHA 🔍'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(164, 78, 41, 0.95); color: #FFF; padding: 15px 30px; border-radius: 4px; font-weight: 500; letter-spacing: 2px; opacity: 0; transition: opacity 0.4s ease; z-index: 10; pointer-events: none; }
+.grand-bp-img::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.1); border-radius: 8px; opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
+.grand-blueprint:hover .grand-bp-img { transform: scale(1.04) translateY(-10px); box-shadow: 0 35px 75px rgba(164, 78, 41, 0.15); }
+.grand-blueprint:hover .grand-bp-img::before, .grand-blueprint:hover .grand-bp-img::after { opacity: 1; }
+.grand-bp-img img { border: 1px solid rgba(0,0,0,0.05); }
+
+/* =========================================
+   RODAPÉ (OBRIGADA)
+   ========================================= */
+.footer-native {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 6rem auto 5rem auto;
+    padding: 0 2rem;
+    position: relative;
+    min-height: 350px;
+    background-color: transparent;
+}
+
+.footer-content {
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    padding-right: 250px; 
+    box-sizing: border-box;
+}
+
+.footer-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400; 
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1.5rem; 
+    margin-bottom: 0;
+    margin-left: 1.5rem; 
+    transition: transform 0.4s ease;
+}
+
+.footer-native:hover .footer-title {
+    transform: scale(1.02); 
+}
+
+.footer-graphics {
+    position: absolute;
+    right: 0;
+    bottom: 0; 
+    width: 250px;
+    height: 350px;
+    z-index: 1;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.footer-native:hover .footer-graphics {
+    transform: translateY(-10px); 
+}
+
+.svg-art {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* =========================================
+   MODAL LIGHTBOX E MOBILE
+   ========================================= */
+.modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(20, 20, 20, 0.95); justify-content: center; align-items: center; padding: 1rem; }
+.modal-content { max-width: 95%; max-height: 92vh; object-fit: contain; border-radius: 4px; box-shadow: 0 0 40px rgba(0,0,0,0.5); }
+.close { position: absolute; top: 20px; right: 30px; color: #FFF; font-size: 45px; font-weight: 300; cursor: pointer; transition: color 0.2s ease; }
+.close:hover { color: var(--secondary-color); }
+
+@media (max-width: 900px) {
+    .hero-native { flex-direction: column; text-align: center; justify-content: center; padding-top: 4rem; }
+    .hero-graphics { margin-top: 3rem; transform: scale(0.8); }
+    .sobre-mim-native { flex-direction: column; text-align: center; gap: 3rem; }
+    .sobre-graphics-original { margin: 0 auto; }
+    .sobre-contact-elegant { flex-direction: column; gap: 1.5rem; align-items: center; }
+    .skills-softwares-section { flex-direction: column; gap: 0; }
+    .skills-box { border-right: none; border-bottom: 1px solid rgba(164, 78, 41, 0.2); padding-right: 0; padding-bottom: 3rem; margin-bottom: 3rem; width: 100%; text-align: center;}
+    .skills-list li { justify-content: center; }
+    .softwares-box { padding-left: 0; width: 100%; text-align: center;}
+    .summary-editorial { flex-direction: column; text-align: center; }
+    .summary-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .summary-graphics { display: none; }
+    .summary-content { padding-right: 0; }
+    .project-card, .project-card.reverse, .grand-blueprint, .grand-blueprint.reverse { flex-direction: column; gap: 2rem; margin-bottom: 5rem; text-align: center; }
+    .project-line { margin: 0 auto; }
+    .grand-link { justify-content: center; }
+    .grand-blueprint:hover .grand-link { transform: translateY(5px); }
+    
+    .footer-native { flex-direction: column; text-align: center; padding: 5rem 2rem; }
+    .footer-content { padding-right: 0; }
+    .footer-title { letter-spacing: 0.5rem; margin-left: 0.5rem; font-size: 2.5rem; }
+    .footer-graphics { opacity: 0.15; right: 50%; transform: translateX(50%); bottom: 0; }
+}
