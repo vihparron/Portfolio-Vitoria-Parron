@@ -37,7 +37,6 @@ img { width: 100%; height: auto; display: block; }
 .hero-subtitle { font-size: 1.2rem; color: var(--text-color); margin-bottom: 0.5rem; letter-spacing: 1px; }
 .hero-title { font-size: clamp(4rem, 8vw, 8rem); font-weight: 700; line-height: 0.9; text-transform: uppercase; color: #000; margin-bottom: 1rem; }
 
-/* NOVO ESTILO DO TÍTULO DA PROFISSÃO (Editorial e Chique) */
 .hero-role { 
     font-size: 1.4rem; 
     color: var(--primary-color); 
@@ -153,7 +152,7 @@ img { width: 100%; height: auto; display: block; }
 /* =========================================
    PROJETOS CARDS
    ========================================= */
-.project-card { display: flex; align-items: flex-start; gap: 4rem; margin-bottom: 8rem; }
+.project-card { display: flex; align-items: center; gap: 4rem; margin-bottom: 8rem; }
 .project-card.reverse { flex-direction: row-reverse; }
 .project-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .project-number { font-size: 4rem; font-weight: 300; color: var(--secondary-color); font-family: Georgia, serif; font-style: italic; line-height: 1; opacity: 0.6; }
@@ -164,25 +163,78 @@ img { width: 100%; height: auto; display: block; }
     font-size: 1rem;
     color: #555;
     line-height: 1.7;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     max-width: 95%;
 }
 
 .project-img-wrapper { flex: 2; position: relative; cursor: pointer; overflow: hidden; border-radius: 8px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); transition: transform 0.4s ease; }
-.project-img-wrapper:hover { transform: scale(1.02); }
-.overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(164, 78, 41, 0.2); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease; }
-.overlay span { color: #FFF; font-weight: 500; background: rgba(20, 20, 20, 0.85); padding: 12px 24px; border-radius: 4px; letter-spacing: 1px; text-transform: uppercase; font-size: 0.85rem; }
+.project-img-wrapper:hover { transform: scale(1.015); }
+.overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(164, 78, 41, 0.18); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease; }
+.overlay span { color: #FFF; font-weight: 500; background: rgba(20, 20, 20, 0.85); padding: 10px 20px; border-radius: 4px; letter-spacing: 1px; text-transform: uppercase; font-size: 0.8rem; text-align: center; }
 .project-img-wrapper:hover .overlay { opacity: 1; }
 
-.project-gallery {
-    flex: 2;
+/* =========================================
+   05. APARTAMENTO RAÍZES - LAYOUT EDITORIAL
+   ========================================= */
+.project-showcase {
+    margin-bottom: 8rem;
+}
+
+.raizes-header-card {
+    margin-bottom: 2rem;
+}
+
+.raizes-hero-img {
+    aspect-ratio: 16 / 9.5;
+}
+
+.raizes-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.raizes-full-gallery {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    background: #FFFFFF;
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
 }
 
-.project-gallery .project-img-wrapper {
+/* 4 Fotos Horizontais em Grid 2x2 */
+.raizes-grid-landscape {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.raizes-grid-landscape .project-img-wrapper {
     flex: none;
+    aspect-ratio: 16 / 9.5;
+    box-shadow: none;
+}
+
+/* 3 Fotos Verticais lado a lado */
+.raizes-grid-portrait {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.raizes-grid-portrait .project-img-wrapper {
+    flex: none;
+    aspect-ratio: 4 / 4.8;
+    box-shadow: none;
+}
+
+.raizes-full-gallery .project-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* =========================================
@@ -269,9 +321,28 @@ img { width: 100%; height: auto; display: block; }
    MODAL LIGHTBOX E MOBILE
    ========================================= */
 .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(20, 20, 20, 0.95); justify-content: center; align-items: center; padding: 1rem; }
-.modal-content { max-width: 95%; max-height: 92vh; object-fit: contain; border-radius: 4px; box-shadow: 0 0 40px rgba(0,0,0,0.5); }
-.close { position: absolute; top: 20px; right: 30px; color: #FFF; font-size: 45px; font-weight: 300; cursor: pointer; transition: color 0.2s ease; }
+.modal-content { max-width: 90%; max-height: 90vh; object-fit: contain; border-radius: 4px; box-shadow: 0 0 40px rgba(0,0,0,0.5); }
+.close { position: absolute; top: 20px; right: 30px; color: #FFF; font-size: 45px; font-weight: 300; cursor: pointer; transition: color 0.2s ease; z-index: 10001; }
 .close:hover { color: var(--secondary-color); }
+
+.modal-nav {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.12);
+    color: #FFF;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem 1.4rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.2s ease;
+    z-index: 10001;
+}
+.modal-nav:hover { background: var(--primary-color); transform: translateY(-50%) scale(1.08); }
+.modal-nav.prev { left: 30px; }
+.modal-nav.next { right: 30px; }
 
 @media (max-width: 900px) {
     .hero-native { flex-direction: column; text-align: center; justify-content: center; padding-top: 4rem; }
@@ -288,7 +359,11 @@ img { width: 100%; height: auto; display: block; }
     .summary-graphics { display: none; }
     .summary-content { padding-right: 0; }
     .project-card, .project-card.reverse, .grand-blueprint, .grand-blueprint.reverse { flex-direction: column; gap: 2rem; margin-bottom: 5rem; text-align: center; }
-    .project-line { margin: 0 auto; }
+    .raizes-header-card { margin-bottom: 1.5rem; }
+    .project-line { margin: 0 auto 1.5rem auto; }
+    .project-desc { max-width: 100%; }
+    .raizes-full-gallery { padding: 1rem; }
+    .raizes-grid-landscape, .raizes-grid-portrait { grid-template-columns: 1fr; gap: 1rem; }
     .grand-link { justify-content: center; }
     .grand-blueprint:hover .grand-link { transform: translateY(5px); }
     
@@ -296,4 +371,7 @@ img { width: 100%; height: auto; display: block; }
     .footer-content { padding-right: 0; }
     .footer-title { letter-spacing: 0.5rem; margin-left: 0.5rem; font-size: 2.5rem; }
     .footer-graphics { opacity: 0.15; right: 50%; transform: translateX(50%); bottom: 0; }
+
+    .modal-nav.prev { left: 10px; padding: 0.7rem 1rem; font-size: 1.5rem; }
+    .modal-nav.next { right: 10px; padding: 0.7rem 1rem; font-size: 1.5rem; }
 }
