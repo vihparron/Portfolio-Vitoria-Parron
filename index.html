@@ -95,12 +95,12 @@
                 <div class="soft-item">
                     <img src="assets/icon-photoshop.png" alt="Photoshop" class="soft-icon-img">
                     <span class="soft-name">Photoshop</span>
-                    <span class="soft-level">Iniciante</span>
+                    <span class="soft-level">Intermediário</span>
                 </div>
                 <div class="soft-item">
                     <img src="assets/icon-illustrator.png" alt="Illustrator" class="soft-icon-img">
                     <span class="soft-name">Illustrator</span>
-                    <span class="soft-level">Iniciante</span>
+                    <span class="soft-level">Intermediário</span>
                 </div>
             </div>
         </div>
@@ -218,22 +218,67 @@
             </div>
         </article>
 
-        <article id="raizes" class="project-card">
-            <div class="project-info">
-                <span class="project-number">05</span>
-                <h2>Apartamento Raízes</h2>
-                <div class="project-line"></div>
-                <p class="project-desc">O apartamento foi pensado para transmitir calma, equilíbrio e aconchego em cada detalhe. A inspiração na cultura japonesa aparece de forma sutil nos elementos vazados, no protagonismo da madeira e na escolha de uma paleta neutra e natural.</p>
-                <p class="project-desc">As texturas e os materiais criam continuidade entre os ambientes, tornando os espaços mais leves e acolhedores. A proposta foi unir funcionalidade e estética de forma harmoniosa, criando uma atmosfera tranquila com personalidade e conforto.</p>
-            </div>
-            <div class="project-gallery">
-                <div class="project-img-wrapper" onclick="openModal('assets/12.png')">
-                    <img src="assets/12.png" alt="Apartamento Raízes - Slide 1">
-                    <div class="overlay"><span>Clique para ampliar slide 1 🔍</span></div>
+        <!-- 05. APARTAMENTO RAÍZES (LAYOUT EDITORIAL HARMÔNICO) -->
+        <article id="raizes" class="project-showcase">
+            <!-- Linha Superior: Texto à esquerda + Foto Principal à direita (igual aos demais projetos) -->
+            <div class="project-card raizes-header-card">
+                <div class="project-info">
+                    <span class="project-number">05</span>
+                    <h2>Apartamento Raízes</h2>
+                    <div class="project-line"></div>
+                    <p class="project-desc">O apartamento foi pensado para transmitir calma, equilíbrio e aconchego em cada detalhe. A inspiração na cultura japonesa aparece de forma sutil nos elementos vazados, no protagonismo da madeira e na escolha de uma paleta neutra e natural.</p>
+                    <p class="project-desc">As texturas e os materiais criam continuidade entre os ambientes, tornando os espaços mais leves e acolhedores. A proposta foi unir funcionalidade e estética de forma harmoniosa, criando uma atmosfera tranquila com personalidade e conforto.</p>
                 </div>
-                <div class="project-img-wrapper" onclick="openModal('assets/13.png')">
-                    <img src="assets/13.png" alt="Apartamento Raízes - Slide 2">
-                    <div class="overlay"><span>Clique para ampliar slide 2 🔍</span></div>
+
+                <div class="project-img-wrapper raizes-hero-img" onclick="openGalleryModal(0)">
+                    <img src="assets/WhatsApp Image 2026-10-27 at 11.22.24 (1).jpeg" alt="Apartamento Raízes - Living Frontal">
+                    <div class="overlay"><span>Living Principal • Ampliar 🔍</span></div>
+                </div>
+            </div>
+
+            <!-- Galeria em Largura Total (Ocupa 100% da página abaixo do texto) -->
+            <div class="raizes-full-gallery">
+                <!-- Bloco 1: 4 Fotos Horizontais (Proporção 16:9 perfeita em Grid 2x2) -->
+                <div class="raizes-grid-landscape">
+                    <div class="project-img-wrapper" onclick="openGalleryModal(1)">
+                        <img src="assets/WhatsApp Image 2026-10-27 at 11.22.24.jpeg" alt="Apartamento Raízes - Estar">
+                        <div class="overlay"><span>Sala de Estar • Ampliar 🔍</span></div>
+                    </div>
+
+                    <div class="project-img-wrapper" onclick="openGalleryModal(2)">
+                        <img src="assets/WhatsApp Image 2026-10-27 at 11.22.25.jpeg" alt="Apartamento Raízes - Sala de Jantar">
+                        <div class="overlay"><span>Sala de Jantar • Ampliar 🔍</span></div>
+                    </div>
+
+                    <div class="project-img-wrapper" onclick="openGalleryModal(3)">
+                        <img src="assets/WhatsApp Image 2026-10-27 at 11.22.24 (4).jpeg" alt="Apartamento Raízes - Cozinha e Ilha">
+                        <div class="overlay"><span>Cozinha e Ilha • Ampliar 🔍</span></div>
+                    </div>
+
+                    <div class="project-img-wrapper" onclick="openGalleryModal(4)">
+                        <img src="assets/WhatsApp Image 2026-10-27 at 11.22.24 (3).jpeg" alt="Apartamento Raízes - Marcenaria e Muxarabi">
+                        <div class="overlay"><span>Cozinha e Muxarabi • Ampliar 🔍</span></div>
+                    </div>
+                </div>
+
+                <!-- Bloco 2: 3 Fotos Verticais (Proporção Retrato lado a lado) -->
+                <div class="raizes-grid-portrait">
+                    <div class="project-img-wrapper" onclick="openGalleryModal(5)">
+                        <img src="assets/WhatsApp Image 2026-10-27 at 11.22.24 (2).jpeg" alt="Apartamento Raízes - Integração">
+                        <div class="overlay"><span>Integração dos Ambientes • Ampliar 🔍</span></div>
+                    </div>
+
+                    <div class="project-img-wrapper" onclick="openGalleryModal(6)">
+                        <img src="assets/WhatsApp Image 2026-10-27 at 11.22.25 (1).jpeg" alt="Apartamento Raízes - Suíte Principal">
+                        <div class="overlay"><span>Suíte Principal • Ampliar 🔍</span></div>
+                    </div>
+
+                    <div class="project-img-wrapper" onclick="openGalleryModal(7)">
+                        <img src="assets/Captura de tela 2026-10-27 114931.png" 
+                             onerror="if(!this.dataset.f){this.dataset.f='1';this.src='assets/Captura de tela 2026-10-27 114931.jpg';}else if(this.dataset.f==='1'){this.dataset.f='2';this.src='assets/Captura de tela 2026-10-27 114931.jpeg';}" 
+                             alt="Apartamento Raízes - Quarto">
+                        <div class="overlay"><span>Quarto • Ampliar 🔍</span></div>
+                    </div>
                 </div>
             </div>
         </article>
@@ -296,10 +341,12 @@
         </div>
     </footer>
 
-    <!-- Modal Lightbox -->
+    <!-- Modal Lightbox com Navegação -->
     <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="imgFull" alt="Visualização em alta resolução">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <button id="prevBtn" class="modal-nav prev" onclick="changeSlide(-1, event)">&#10094;</button>
+        <img class="modal-content" id="imgFull" alt="Visualização em alta resolução" onclick="event.stopPropagation()">
+        <button id="nextBtn" class="modal-nav next" onclick="changeSlide(1, event)">&#10095;</button>
     </div>
 
     <script src="script.js"></script>
